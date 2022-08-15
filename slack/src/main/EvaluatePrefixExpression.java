@@ -6,7 +6,7 @@ import java.util.Stack;
   Evaluation Of prefix Expression in Java. Input Prefix expression must be in a desired format.
 */
 
-public class PrefixToInfix {
+public class EvaluatePrefixExpression {
     public static void main(String[] args) {
         String exp = "- + 7 * 4 5 + 2 0";
         System.out.println("Answer of Prefix Expression  is " + evaluateExpression(exp));

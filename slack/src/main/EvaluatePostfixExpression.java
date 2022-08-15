@@ -6,7 +6,7 @@ import java.util.Stack;
   Evaluation Of postfix Expression in Java. Input Postfix expression must be in a desired format.
 */
 
-public class PostfixToInfix {
+public class EvaluatePostfixExpression {
 
     public static void main(String[] args) {
         String exp = "2 3 * 5 4 * + 9 -";
