@@ -1,11 +1,11 @@
 package breadthfirsttraverse;
 
-public class BFDBinaryTree {
+public class CharTree {
     char data;
-    BFDBinaryTree left = null;
-    BFDBinaryTree right = null;
+    CharTree left = null;
+    CharTree right = null;
 
-    public BFDBinaryTree(char data) {
+    public CharTree(char data) {
         this.data = data;
     }
 

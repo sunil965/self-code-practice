@@ -6,26 +6,26 @@ import java.util.Queue;
 public class LevelOrderTraverse {
 
     public static void main(String[] args) {
-        BFDBinaryTree f = new BFDBinaryTree('F');
+        CharTree f = new CharTree('F');
 
-        BFDBinaryTree b = new BFDBinaryTree('B');
-        b.left = new BFDBinaryTree('A');
-        b.right = new BFDBinaryTree('C');
+        CharTree b = new CharTree('B');
+        b.left = new CharTree('A');
+        b.right = new CharTree('C');
 
-        BFDBinaryTree d = new BFDBinaryTree('D');
+        CharTree d = new CharTree('D');
         d.left = b;
-        d.right = new BFDBinaryTree('E');
+        d.right = new CharTree('E');
 
-        BFDBinaryTree g = new BFDBinaryTree('G');
+        CharTree g = new CharTree('G');
 
-        BFDBinaryTree i = new BFDBinaryTree('I');
-        i.left = new BFDBinaryTree('H');
+        CharTree i = new CharTree('I');
+        i.left = new CharTree('H');
 
         g.right = i;
 
-        BFDBinaryTree j = new BFDBinaryTree('J');
+        CharTree j = new CharTree('J');
         j.left = g;
-        j.right = new BFDBinaryTree('K');
+        j.right = new CharTree('K');
 
         f.left = d;
         f.right = j;
@@ -33,13 +33,13 @@ public class LevelOrderTraverse {
         levelOrderTraverse(f);
     }
 
-    private static void levelOrderTraverse(BFDBinaryTree root) {
+    private static void levelOrderTraverse(CharTree root) {
         if (root==null)
             return;
-        Queue<BFDBinaryTree> queue = new LinkedList<>();
+        Queue<CharTree> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()){
-            BFDBinaryTree current = queue.peek();
+            CharTree current = queue.peek();
             System.out.print(current.data+" ");
             if (current.left!=null)
                 queue.add(current.left);
