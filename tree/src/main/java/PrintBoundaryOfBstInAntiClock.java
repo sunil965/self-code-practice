@@ -32,7 +32,7 @@ public class PrintBoundaryOfBstInAntiClock {
 
     private static void printBoundaryOfTreeInAnticlockwise(CharTree root) {
         if (root == null) return;
-        System.out.print(root.data+" ");
+        System.out.print(root.data + " ");
         printLeftBoundary(root.left);
         printLeafNodes(root.left);
         printLeafNodes(root.right);
@@ -42,12 +42,12 @@ public class PrintBoundaryOfBstInAntiClock {
     private static void printRightBoundary(CharTree root) {
         if (root == null) return;
         // to ensure bottom up order, first call for right subtree, then print this node
-        if (root.right != null){
+        if (root.right != null) {
             printRightBoundary(root.right);
-            System.out.print(root.data+" ");
+            System.out.print(root.data + " ");
         } else if (root.left != null) {
             printRightBoundary(root.left);
-            System.out.print(root.data+" ");
+            System.out.print(root.data + " ");
         }
         // To avoid duplicates in output do nothing if it is a leaf node.
     }
@@ -56,8 +56,8 @@ public class PrintBoundaryOfBstInAntiClock {
         if (root == null) return;
         printLeafNodes(root.left);
         // Print it if it is a leaf node
-        if (root.left ==null && root.right==null)
-            System.out.print(root.data+" ");
+        if (root.left == null && root.right == null)
+            System.out.print(root.data + " ");
         printLeafNodes(root.right);
     }
 
@@ -65,11 +65,10 @@ public class PrintBoundaryOfBstInAntiClock {
         if (root == null) return;
         // to ensure top down order, print the node before calling itself for left subtree.
         if (root.left != null) {
-            System.out.print(root.data+" ");
+            System.out.print(root.data + " ");
             printLeftBoundary(root.left);
-        }
-        else if (root.right != null){
-            System.out.print(root.data+" ");
+        } else if (root.right != null) {
+            System.out.print(root.data + " ");
             printLeftBoundary(root.right);
         }
         // To avoid duplicates in output do nothing if it is a leaf node.
