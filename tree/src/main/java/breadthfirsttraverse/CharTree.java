@@ -1,9 +1,9 @@
 package breadthfirsttraverse;
 
 public class CharTree {
-    char data;
-    CharTree left = null;
-    CharTree right = null;
+    public char data;
+    public CharTree left = null;
+    public CharTree right = null;
 
     public CharTree(char data) {
         this.data = data;
