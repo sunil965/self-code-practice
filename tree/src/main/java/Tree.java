@@ -9,6 +9,6 @@ public class Tree {
 
     @Override
     public String toString() {
-        return "HeightTree {" + "data=" + data + ", left=" + left + ", right=" + right + '}';
+        return "Tree {" + "data=" + data + ", left=" + left + ", right=" + right + '}';
     }
 }
