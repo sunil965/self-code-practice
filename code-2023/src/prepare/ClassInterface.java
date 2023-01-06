@@ -1,11 +1,11 @@
-package P;
+package prepare;
 interface A {
     void show();
 }
 interface B extends A {
     void sqrt(int x);
 }
-public class P implements B {
+public class ClassInterface implements B {
     @Override
     public void show() {
         System.out.print("Output : ");
@@ -17,8 +17,8 @@ public class P implements B {
 }
 class Practice {
     public static void main(String[] args) {
-        P pract = new P();
-        pract.show();
-        pract.sqrt(2);
+        ClassInterface classObject = new ClassInterface();
+        classObject.show();
+        classObject.sqrt(2);
     }
 }
