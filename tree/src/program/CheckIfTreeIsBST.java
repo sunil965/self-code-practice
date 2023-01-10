@@ -1,4 +1,4 @@
-/*
+package program;/*
 * This code is to identify if the given tree is Binary search tree or not.
 * Logic : compare left child's data with it's root data, it should be less than root. Similarly
 * right child subtree should be grater than root.

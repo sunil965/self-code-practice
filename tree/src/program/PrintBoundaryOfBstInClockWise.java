@@ -1,4 +1,6 @@
-import breadthfirsttraverse.CharTree;
+package program;
+
+import program.breadthfirsttraverse.CharTree;
 
 public class PrintBoundaryOfBstInClockWise {
 
