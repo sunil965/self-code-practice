@@ -1,7 +1,6 @@
-package depthfirsttraverse;
+package program.depthfirsttraverse;
 
-public class Inorder {
-
+public class Postorder {
     public static void main(String[] args) {
 
         BinaryTree f = new BinaryTree('F');
@@ -27,16 +26,16 @@ public class Inorder {
 
         f.left = d;
         f.right = j;
-        System.out.println("Inorder Traversal");
-        inorder(f);
+        System.out.println("Postorder Traversal");
+        postorder(f);
     }
 
-    private static void inorder(BinaryTree root) {
-        BinaryTree tree = root;
+    private static void postorder(BinaryTree f) {
+        BinaryTree tree = f;
         if (tree==null)
             return;
-        inorder(tree.left);
+        postorder(tree.left);
+        postorder(tree.right);
         System.out.print(tree.data+" ");
-        inorder(tree.right);
     }
 }

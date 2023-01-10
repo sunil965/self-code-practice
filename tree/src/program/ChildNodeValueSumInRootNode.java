@@ -1,3 +1,5 @@
+package program;
+
 /**
  * Java program to convert a tree where root node will have sum of its child node.
  */

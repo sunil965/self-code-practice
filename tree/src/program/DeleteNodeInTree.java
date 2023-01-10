@@ -1,3 +1,5 @@
+package program;
+
 public class DeleteNodeInTree {
     public static void main(String[] args) {
         Tree root = new Tree(12);
