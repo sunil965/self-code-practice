@@ -1,4 +1,4 @@
-package interview;
+package udemy;
 
 /**
  * Write a program to print Pyramid pattern based on the given input number.

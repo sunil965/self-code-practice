@@ -1,4 +1,4 @@
-package interview;
+package udemy;
 
 public class Fibonacci {
 

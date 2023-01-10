@@ -1,4 +1,4 @@
-package interview;
+package udemy;
 
 /**
  * Program to print stair pattern where '#' will be the stair number & there should be
