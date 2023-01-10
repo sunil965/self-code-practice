@@ -1,11 +1,11 @@
-package breadthfirsttraverse;
+package program.depthfirsttraverse;
 
-public class CharTree {
-    public char data;
-    public CharTree left = null;
-    public CharTree right = null;
+public class BinaryTree {
+    char data;
+    BinaryTree left = null;
+    BinaryTree right = null;
 
-    public CharTree(char data) {
+    public BinaryTree(char data) {
         this.data = data;
     }
 

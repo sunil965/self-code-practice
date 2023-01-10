@@ -1,3 +1,5 @@
+package program;
+
 public class Tree {
     int data;
     Tree left = null;
