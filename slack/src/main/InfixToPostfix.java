@@ -5,6 +5,7 @@ import java.util.Stack;
 public class InfixToPostfix {
     public static void main(String[] args) {
         String infix = "((2+3)*4-5)*6";
+        System.out.println("Input :" + infix);
         System.out.println("Output is : " + convertToPostfix(infix));
     }
 
