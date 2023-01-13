@@ -4,17 +4,12 @@ import java.util.Stack;
 
 public class InfixToPreFix2 {
     static int precedence(char c) {
-        switch (c) {
-            case '+':
-            case '-':
-                return 1;
-            case '*':
-            case '/':
-                return 2;
-            case '^':
-                return 3;
-        }
-        return -1;
+        return switch (c) {
+            case '+', '-' -> 1;
+            case '*', '/' -> 2;
+            case '^' -> 3;
+            default -> -1;
+        };
     }
 
     static StringBuilder infixToPreFix(String expression) {
@@ -56,14 +51,17 @@ public class InfixToPreFix2 {
             }
         }
 
-        for (int i = 0; i <= stack.size(); i++) {
-            result.append(stack.pop());
+        while (!stack.isEmpty()) {
+            if (stack.peek() != '(')
+                result.append(stack.pop());
+            else
+                stack.pop();
         }
         return result.reverse();
     }
 
     public static void main(String[] args) {
-        String exp = "A+B*((C^D)-E)";
+        String exp = "((2+3)*4-5)*6";
         System.out.println("Infix Expression: " + exp);
         System.out.println("Prefix Expression: " + infixToPreFix(exp));
     }
