@@ -1,4 +1,4 @@
-package prepare;
+package interview.Cars24;
 
 import java.util.ArrayList;
 import java.util.Arrays;

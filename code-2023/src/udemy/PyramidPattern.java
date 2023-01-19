@@ -45,7 +45,7 @@ public class PyramidPattern {
     }
 
     private static void viaLoop(int input) {
-        System.out.println("Via Recursion.");
+        System.out.println("Via Loop.");
         int midpoint = (2 * input - 1) / 2;
 
         for (int row = 0; row < input; row++) {
