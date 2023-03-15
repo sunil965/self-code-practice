@@ -13,7 +13,7 @@ public class LongestPalindromicSubsequence {
          */
 
         int longestPalindromicSubsequence = longestCommonSubsequence(st, new StringBuffer(st).reverse().toString(), n, n);
-        System.out.println("Longest Palindromic Subsequence length : " + longestPalindromicSubsequence);
+//        System.out.println("Longest Palindromic Subsequence length : " + longestPalindromicSubsequence);
 
         /*
           No of character to be deleted to convert a Given String in Palindrome String. First find LCS between Given String & it's reverse

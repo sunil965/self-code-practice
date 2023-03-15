@@ -8,14 +8,14 @@ public class Result {
     public static void main(String[] args) {
 //        Integer[] arr = {-4, 3, -9, 0, 4, 1};
 //        plusMinus(Arrays.asList(arr));
-//
-//        String result = timeConversion("12:45:54PM");
-//        System.out.println(result);
 
-        String s = "ervervige";
-        int n = s.length();
-        int solution = deleteElements(s, 0, n - 1);
-        System.out.println(solution);
+        String result = timeConversion("12:45:54AM");
+        System.out.println(result);
+
+//        String s = "ervervige";
+//        int n = s.length();
+//        int solution = deleteElements(s, 0, n - 1);
+//        System.out.println(solution);
     }
 
     public static int deleteElements(String str, int i, int j) {
@@ -46,7 +46,7 @@ public class Result {
     }
 
     public static String timeConversion(String s) {
-        // Write your code here
+        // Write your code here "12:45:54PM"
 
         String result = "";
 
@@ -57,8 +57,6 @@ public class Result {
                 result = s.replace(s.substring(0, 2), String.valueOf(switchCase(tempNum))).substring(0, s.length() - 2);
         } else if (s.endsWith("AM") && s.subSequence(0, 2).equals("12"))
             result = s.replace("12", "00").substring(0, s.length() - 2);
-        else
-            result = s.substring(0, s.length() - 2);
         return result;
     }
 

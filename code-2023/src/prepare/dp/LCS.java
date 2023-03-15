@@ -36,17 +36,15 @@ public class LCS {
         // Longest common subsequence MemoizeDP
         int longestCommonSubsequenceMemoizeDp = longestCommonSubsequenceMemoizeDp(s1, s2, m, n);
         System.out.println("MemoizeDP : Longest common subsequence size : " + longestCommonSubsequenceMemoizeDp);
-//        printMatrix(t);
+        printMatrix(t);
 
         // Longest common subsequence real DP without Recursion
-        /*
-            int longestCommonSubsequenceDp = longestCommonSubsequenceDp(s1, s2, m, n);
-            System.out.println("DP : Longest common subsequence size : " + longestCommonSubsequenceDp);
-        */
-        longestCommonSubsequenceDp(s1, s2, m, n);
+        int longestCommonSubsequenceDp = longestCommonSubsequenceDp(s1, s2, m, n);
+        System.out.println("DP : Longest common subsequence size : " + longestCommonSubsequenceDp);
+//        longestCommonSubsequenceDp(s1, s2, m, n);
     }
 
-    public static void longestCommonSubsequenceDp(String s1, String s2, int m, int n) {
+    public static int longestCommonSubsequenceDp(String s1, String s2, int m, int n) {
         int[][] t = new int[m + 1][n + 1];
         // By default value of matrix is assigned with zero, no need to initialize 1st row & 1st column.
 
@@ -58,9 +56,9 @@ public class LCS {
                     t[i][j] = Math.max(t[i - 1][j], t[i][j - 1]);
             }
         }
-//        return t[m][n];
-        System.out.println("DP : Longest common subsequence size : " + t[m][n]);
         printMatrix(t);
+        return t[m][n];
+//        System.out.println("DP : Longest common subsequence size : " + t[m][n]);
     }
 
     public static int longestCommonSubsequenceMemoizeDp(String s1, String s2, int m, int n) {
