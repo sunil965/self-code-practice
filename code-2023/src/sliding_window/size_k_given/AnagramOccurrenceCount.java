@@ -4,22 +4,22 @@ import java.util.*;
 
 public class AnagramOccurrenceCount {
     public static void main(String[] args) {
-        String mainStr = "aabaabaa";
-        String second = "aaba";
+        String givenString = "aabaabaa";
+        String pattern = "aaba";
 
-//        Map<String, Long> map = Arrays.stream(second.split("")).collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+//        Map<String, Long> map = Arrays.stream(pattern.split("")).collect(Collectors.groupingBy(s -> s, Collectors.counting()));
         Map<Character, Integer> map = new HashMap<>();
-        for (char c : second.toCharArray()) {
+        for (char c : pattern.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        int k = second.length(); // window size
+        int k = pattern.length(); // window size
         int i = 0, j = 0;
         int result = 0;
         int count = map.size();
 
-        while (j < mainStr.length()) {
+        while (j < givenString.length()) {
 
-            count = getCountAfterJIncrementsToIncludeNewValue(mainStr, map, j, count);
+            count = getCountAfterJIncrementsToIncludeNewValue(givenString, map, j, count);
 
             if ((j - i + 1) < k)
                 j++;
@@ -27,7 +27,7 @@ public class AnagramOccurrenceCount {
             else if ((j - i + 1) == k) {
                 if (count == 0)
                     result++;
-                count = getCountBeforeIIncrementsToExcludeOldValue(mainStr, map, i, count);
+                count = getCountBeforeIIncrementsToExcludeOldValue(givenString, map, i, count);
                 i++;
                 j++;
             }
