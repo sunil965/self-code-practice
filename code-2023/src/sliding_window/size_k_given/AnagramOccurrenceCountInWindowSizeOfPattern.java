@@ -2,7 +2,11 @@ package sliding_window.size_k_given;
 
 import java.util.*;
 
-public class AnagramOccurrenceCount {
+/**
+ * Find the count of all Anagram in a given String for a given Pattern.
+ * It is sliding window problem as we have to find pattern in the window of size of given Pattern.
+ */
+public class AnagramOccurrenceCountInWindowSizeOfPattern {
     public static void main(String[] args) {
         String givenString = "aabaabaa";
         String pattern = "aaba";
@@ -32,7 +36,7 @@ public class AnagramOccurrenceCount {
                 j++;
             }
         }
-        System.out.println(result);
+        System.out.format("Total count of Anagram for given patter in string is : %s",result);
     }
 
     private static int getCountBeforeIIncrementsToExcludeOldValue(String mainStr, Map<Character, Integer> map, int i, int count) {
