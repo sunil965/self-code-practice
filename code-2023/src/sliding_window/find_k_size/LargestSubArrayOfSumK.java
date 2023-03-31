@@ -2,6 +2,10 @@ package sliding_window.find_k_size;
 
 import java.util.HashMap;
 
+/**
+ * This program can work with an array of either positive number or negative number combination of positive & negative number
+ * to find the Largest sub array where sum of elements is any given number.
+ */
 public class LargestSubArrayOfSumK {
 
 	public static void main(String[] args) {
@@ -16,26 +20,25 @@ public class LargestSubArrayOfSumK {
 		subArraySum(arr, n, sum);
 	}
 
-	private static void subArraySum(int[] arr, int n, int sum) {
-		int cSum = 0;
-		int start = 0;
-		int end;
+	private static void subArraySum(int[] arr, int n, int givenSum) {
+		int currentSum = 0, start = 0, end;
 		int maxLength = Integer.MIN_VALUE;
 		HashMap<Integer, Integer> map = new HashMap<>();
 		for (int i = 0; i < n; i++) {
-			cSum += arr[i];
-			if (cSum == sum) {
+			currentSum += arr[i];
+
+			if (currentSum == givenSum) {
 				end = i;
 				System.out.println("Sum found between indexes " + start + " to " + end);
 				maxLength = Math.max(end - start + 1, maxLength);
 			}
-			if (map.containsKey(cSum - sum)) {
-				start = map.get(cSum - sum) + 1;
+			if (map.containsKey(currentSum - givenSum)) {
+				start = map.get(currentSum - givenSum) + 1;
 				end = i;
 				System.out.println("Sum found between indexes " + start + " to " + end);
 				maxLength = Math.max(end - start + 1, maxLength);
 			}
-			map.put(cSum, i);
+			map.put(currentSum, i);
 		}
 		System.out.println("Max size Sub Array " + maxLength);
 	}
