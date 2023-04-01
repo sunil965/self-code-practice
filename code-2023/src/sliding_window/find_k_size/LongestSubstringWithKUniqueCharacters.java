@@ -14,8 +14,8 @@ public class LongestSubstringWithKUniqueCharacters {
         int i = 0, j = 0, max = Integer.MIN_VALUE;
 
         while (j < string.length()) {
-            char c = string.charAt(j);
-            map.put(c, map.getOrDefault(c, 0) + 1);
+            char charAtJ = string.charAt(j);
+            map.put(charAtJ, map.getOrDefault(charAtJ, 0) + 1);
 
             if (map.size() < k)
                 j++;
@@ -25,10 +25,11 @@ public class LongestSubstringWithKUniqueCharacters {
             } else {
                 // This block is executable when (map.size() > k).
                 while (map.size() > k) {
-                    if (map.containsKey(string.charAt(i)))
-                        map.put(string.charAt(i), map.get(string.charAt(i)) - 1);
-                    if (map.get(string.charAt(i)) == 0)
-                        map.remove(string.charAt(i));
+                    char charAtI = string.charAt(i);
+                    if (map.containsKey(charAtI))
+                        map.put(charAtI, map.get(charAtI) - 1);
+                    if (map.get(charAtI) == 0)
+                        map.remove(charAtI);
                     i++;
                 }
                 j++;
