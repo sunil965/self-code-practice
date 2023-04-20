@@ -12,17 +12,17 @@ import java.util.Arrays;
      Solution: It needs mathematical logic to solve as-
       -> Two subsets of given array could be [{1,1,2},{3}], [{1,3},{1,2}] and so on.
       -> Assume the S1 and S2 are sum of two subsets then as per the problem statement
-      S1 - S2 = 1 OR S2 - S1 = 1 ---- (equation 1)
+            S1 - S2 = 1 OR S2 - S1 = 1 ---- (equation 1)
       -> Also, we know that if there are 2 subsets, and when we add the SUM of each subset then it will be equal
       to sum of given array elements(Represented as R) , that is
-      S1 + S2 = R ---- (equation 2)
+            S1 + S2 = R ---- (equation 2)
       -> Adding equation 1 & equation 2
-      S1 - S2 = 1
-      +
-      S1 + S2 = R
-      ------------
-      2S1 = 1 + R   --> S1 = (1+R)/2, For given array R is 7 so S1 = (1+7)/2 = 4.
-      ------------
+          S1 - S2 = 1
+          +
+          S1 + S2 = R
+          ------------
+          2S1 = 1 + R   --> S1 = (1+R)/2, For given array R is 7 so S1 = (1+7)/2 = 4.
+          ------------
       Now the problem is reduced to "Count of Number of Subset Problem for a given sum" where Sum = (1+R)/2.
  </p>
  */
