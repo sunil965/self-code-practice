@@ -1,8 +1,10 @@
 package prepare.dp;
 
+import java.util.Arrays;
+
 /**
- * Problem: To place "+" OR "-" in a way between the elements of a given array so that the Sum of all elements with
- * the symbol will be equal to a number called Target Sum.
+ * Problem: Find different ways to place "+" OR "-" sign between the elements of a given array so that the Sum of all
+ * elements with the symbol will be equal to a number called Target Sum.
  * I/P: int[] arr = {1,1,2,3}; int SUM = 1;
 
   <p>
@@ -18,6 +20,18 @@ package prepare.dp;
 public class TargetSum {
 
     public static void main(String[] args) {
-        // TODO: Same as Count Subset Sum for a Given Difference.
+
+        // Given
+        int[] arr = {1,1,2,3};
+        int SUM = 1;
+
+        int R = Arrays.stream(arr).sum();
+        int s1 = (1 + R) / 2;
+
+        int n = arr.length;
+        int[][] t = new int[n + 1][s1 + 1];
+
+        int numberOfSubsets = SubsetSumCountForGIvenDifference.countNumberOfSubsets(arr, n, s1, t);
+        System.out.format("Total number of subsets is - %s where the Target Sum is %s.", numberOfSubsets, SUM);
     }
 }

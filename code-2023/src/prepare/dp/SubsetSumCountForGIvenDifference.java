@@ -45,7 +45,7 @@ public class SubsetSumCountForGIvenDifference {
         System.out.format("Total number of subsets is - %s where the difference of their sum is %s.", numberOfSubsets, diff);
     }
 
-    private static int countNumberOfSubsets(int[] arr, int n, int k, int[][] t) {
+    public static int countNumberOfSubsets(int[] arr, int n, int k, int[][] t) {
         // Initialization of matrix
         for (int i = 0; i < n + 1; i++) {
             for (int j = 0; j < k + 1; j++) {
