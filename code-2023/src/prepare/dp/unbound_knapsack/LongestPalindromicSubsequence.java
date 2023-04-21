@@ -1,4 +1,4 @@
-package prepare.dp;
+package prepare.dp.unbound_knapsack;
 
 public class LongestPalindromicSubsequence {
 

@@ -1,4 +1,4 @@
-package prepare.dp;
+package prepare.dp.unbound_knapsack;
 
 /**
  * Longest common subsequence between two String is the number of characters with their count is same,
@@ -9,7 +9,7 @@ package prepare.dp;
  * or increase the count of 'u' in any of the string the LCS will remain same.
  */
 
-public class LCS {
+public class LongestCommonSequence {
 
     static int[][] t = new int[10][10];
 
