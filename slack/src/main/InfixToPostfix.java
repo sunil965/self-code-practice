@@ -5,6 +5,7 @@ import java.util.Stack;
 public class InfixToPostfix {
     public static void main(String[] args) {
         String infix = "((2+3)*4-5)*6";
+        System.out.println("Input :" + infix);
         System.out.println("Output is : " + convertToPostfix(infix));
     }
 
@@ -50,8 +51,8 @@ public class InfixToPostfix {
         int op1Weight = getOperatorWeight(peek);
         int op2Weight = getOperatorWeight(c);
 
-        // If operators have equal precedence, return true if they are left associative.
-        // return false, if right associative.
+        // If operators have equal precedence, return true if they are left
+        // associative, return false if right associative.
         // if operator is left-associative, left one should be given priority.
         if (op1Weight == op2Weight) {
             return !isRightAssociative(peek);
@@ -64,21 +65,12 @@ public class InfixToPostfix {
     }
 
     private static int getOperatorWeight(char op) {
-        int weight = -1;
-        switch (op) {
-            case '+':
-            case '-':
-                weight = 1;
-                break;
-            case '*':
-            case '/':
-                weight = 2;
-                break;
-            case '$':
-                weight = 3;
-                break;
-        }
-        return weight;
+        return switch (op) {
+            case '+', '-' -> 1;
+            case '*', '/' -> 2;
+            case '$' -> 3;
+            default -> -1;
+        };
     }
 
     private static boolean isAnAlphabetOrNumber(char c) {

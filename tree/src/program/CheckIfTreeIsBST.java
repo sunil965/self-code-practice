@@ -1,4 +1,5 @@
-package program;/*
+package program;
+/**
 * This code is to identify if the given tree is Binary search tree or not.
 * Logic : compare left child's data with it's root data, it should be less than root. Similarly
 * right child subtree should be grater than root.
@@ -37,17 +38,22 @@ public class CheckIfTreeIsBST {
 
     private static boolean isBST(Tree root) {
         if (root==null) return true;
-        return isSubtreeSmaller(root.left, root.data) && isSubtreeGrater(root.right, root.data)
+        return isSubtreeSmaller(root.left, root.data) &&
+                isSubtreeGrater(root.right, root.data)
                 && isBST(root.left) && isBST(root.right);
     }
 
     private static boolean isSubtreeGrater(Tree root, int actualRootValue) {
         if (root==null) return true;
-        return root.data > actualRootValue && isSubtreeGrater(root.left, actualRootValue) && isSubtreeGrater(root.right, actualRootValue);
+        return root.data > actualRootValue &&
+                isSubtreeGrater(root.left, root.data) &&
+                isSubtreeGrater(root.right, root.data);
     }
 
     private static boolean isSubtreeSmaller(Tree root, int actualRootValue) {
         if (root== null) return true;
-        return root.data <= actualRootValue && isSubtreeSmaller(root.left, actualRootValue) && isSubtreeSmaller(root.right, actualRootValue);
+        return root.data <= actualRootValue &&
+                isSubtreeSmaller(root.left, root.data) &&
+                isSubtreeSmaller(root.right, root.data);
     }
 }
