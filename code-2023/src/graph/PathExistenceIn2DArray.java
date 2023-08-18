@@ -1,10 +1,6 @@
-package interview;
+package graph;
 
 import java.util.*;
-
-/**
- * Unidirectional Graph Traversal to check Path from Source (Start) to Destination (End).
- */
 
 public class PathExistenceIn2DArray {
 
