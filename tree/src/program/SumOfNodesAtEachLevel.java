@@ -1,5 +1,6 @@
 package program;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -20,12 +21,13 @@ public class SumOfNodesAtEachLevel {
         System.out.println("Height of tree " + height);
 
         int[] levelSum = new int[height];
-//        calculateSumAtLevelBFS(root, levelSum);
-        calculateSumAtLevelDFS(root, 0, levelSum);
+        calculateSumAtLevelBFS(root, levelSum);
 
-        for (int sum : levelSum) {
-            System.out.println(sum);
-        }
+        int[] levelSum2 = new int[height];
+        calculateSumAtLevelDFS(root, 0, levelSum2);
+
+        System.out.println(Arrays.toString(levelSum));
+        System.out.println(Arrays.toString(levelSum2));
     }
 
     private static void calculateSumAtLevelDFS(Tree root, int level, int[] levelSum) {
